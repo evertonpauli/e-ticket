@@ -1,0 +1,93 @@
+[{
+    "model": "base.usuario",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$iEjFaHj6bY5s$7rM5lxPvt+iqEV4GA2bAdbr0mmV/jjC61EjrZ/ghthA=",
+        "last_login": "2019-08-13T18:10:22.099Z",
+        "is_superuser": true,
+        "username": "demo",
+        "first_name": "",
+        "last_name": "",
+        "email": "demo@demo.com.br",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2019-08-12T21:05:28.417Z",
+        "cliente": false,
+        "suporte": false,
+        "desenvolvedor": false,
+        "groups": [],
+        "user_permissions": []
+    }
+}, {
+    "model": "base.usuario",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$pUdQD0kdqlhk$T06wF6lkJ86H5YIWZiZPer+FBC/XEhjqz5qU9z7B0tY=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "demo1",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2019-08-13T18:12:14.980Z",
+        "cliente": false,
+        "suporte": false,
+        "desenvolvedor": false,
+        "groups": [],
+        "user_permissions": []
+    }
+}, {
+    "model": "base.empresa",
+    "pk": 1,
+    "fields": {
+        "razao_social": "TININHO CONTAILIDADE EIRELI - ME",
+        "nome_fantasia": "TININHO CONTABILIDADE",
+        "cnpj": "12029590000164",
+        "cep": "78365-000",
+        "endereco": "AV LIONS INTERNACIONAL",
+        "numero": "550 SW",
+        "bairro": "Cidezal 1",
+        "municipio": "Sapezal",
+        "estado": "Mato Grosso"
+    }
+}, {
+    "model": "cadastros.clientes",
+    "pk": 1,
+    "fields": {
+        "razao_social": "Tend Tudo Eirelie ME",
+        "nome_fantasia": "Tend Tudo Variedades",
+        "cnpj": "12.029.590/0001-64",
+        "cep": "78365-000",
+        "endereco": "AV LIONS INTERNACIONAL",
+        "numero": "391871",
+        "bairro": "Cidezal 1",
+        "municipio": "Sapezal",
+        "estado": "Mato Grosso"
+    }
+}, {
+    "model": "cadastros.status",
+    "pk": 1,
+    "fields": {
+        "descricao": "Aberto"
+    }
+}, {
+    "model": "cadastros.status",
+    "pk": 2,
+    "fields": {
+        "descricao": "Concluido"
+    }
+}, {
+    "model": "cadastros.categoria",
+    "pk": 1,
+    "fields": {
+        "descricao": "Em Andamento"
+    }
+}, {
+    "model": "cadastros.categoria",
+    "pk": 2,
+    "fields": {
+        "descricao": "Aguardando atendimento"
+    }
+}]
