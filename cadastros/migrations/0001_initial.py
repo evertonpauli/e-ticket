@@ -7,49 +7,72 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Categoria',
+            name="Categoria",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('descricao', models.CharField(max_length=80, verbose_name='Categoria')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "descricao",
+                    models.CharField(max_length=80, verbose_name="Categoria"),
+                ),
             ],
-            options={
-                'verbose_name': 'Categoria',
-                'verbose_name_plural': 'Categorias',
-            },
+            options={"verbose_name": "Categoria", "verbose_name_plural": "Categorias"},
         ),
         migrations.CreateModel(
-            name='Clientes',
+            name="Clientes",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('razao_social', models.CharField(max_length=80, verbose_name='Razão Social')),
-                ('nome_fantasia', models.CharField(max_length=80, verbose_name='Nome Fantasia')),
-                ('cnpj', models.CharField(max_length=20, verbose_name='CNPJ/CPF')),
-                ('cep', models.CharField(max_length=9)),
-                ('endereco', models.CharField(max_length=100)),
-                ('numero', models.CharField(max_length=6)),
-                ('bairro', models.CharField(max_length=100)),
-                ('municipio', models.CharField(max_length=50)),
-                ('estado', models.CharField(max_length=100)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "razao_social",
+                    models.CharField(max_length=80, verbose_name="Razão Social"),
+                ),
+                (
+                    "nome_fantasia",
+                    models.CharField(max_length=80, verbose_name="Nome Fantasia"),
+                ),
+                ("cnpj", models.CharField(max_length=20, verbose_name="CNPJ/CPF")),
+                ("cep", models.CharField(max_length=9)),
+                ("endereco", models.CharField(max_length=100)),
+                ("numero", models.CharField(max_length=6)),
+                ("bairro", models.CharField(max_length=100)),
+                ("municipio", models.CharField(max_length=50)),
+                ("estado", models.CharField(max_length=100)),
             ],
-            options={
-                'verbose_name': 'Cliente',
-                'verbose_name_plural': 'Clientes',
-            },
+            options={"verbose_name": "Cliente", "verbose_name_plural": "Clientes"},
         ),
         migrations.CreateModel(
-            name='Status',
+            name="Status",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('descricao', models.CharField(max_length=80, verbose_name='Status')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("descricao", models.CharField(max_length=80, verbose_name="Status")),
             ],
-            options={
-                'verbose_name': 'Status',
-                'verbose_name_plural': 'Status',
-            },
+            options={"verbose_name": "Status", "verbose_name_plural": "Status"},
         ),
     ]

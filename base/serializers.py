@@ -1,7 +1,6 @@
 from rest_framework import serializers
-from rest_auth.models import TokenModel
-
 from .models import *
+
 
 class EmpresaSerializer(serializers.ModelSerializer):
     """
@@ -10,9 +9,11 @@ class EmpresaSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Empresa
-        fields = '__all__'
+        fields = "__all__"
+
 
 # -----------------------------------------------------------------------------
+
 
 class ModulosSerializer(serializers.ModelSerializer):
     """
@@ -21,14 +22,15 @@ class ModulosSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Modulos
-        fields = '__all__'
+        fields = "__all__"
+
 
 # -----------------------------------------------------------------------------
 
-# class UsuarioSerializer(serializers.ModelSerializer):
+class UsuarioSerializer(serializers.ModelSerializer):
 
-#     class Meta:
-#         model = Usuario
-#         fields = '__all__'
+    class Meta:
+        model = Usuario
+        fields = '__all__'
 
 # -----------------------------------------------------------------------------

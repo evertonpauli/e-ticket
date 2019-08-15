@@ -2,6 +2,7 @@ from rest_framework import serializers
 
 from .models import *
 
+
 class ChamadoSerializer(serializers.ModelSerializer):
     """
     Serializer para o modelo Chamado
@@ -9,9 +10,11 @@ class ChamadoSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Chamado
-        fields = '__all__'
+        fields = "__all__"
+
 
 # -----------------------------------------------------------------------------
+
 
 class BaseConhecimentoSerializer(serializers.ModelSerializer):
     """
@@ -20,6 +23,7 @@ class BaseConhecimentoSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = BaseConhecimento
-        fields = '__all__'
+        fields = "__all__"
+
 
 # -----------------------------------------------------------------------------

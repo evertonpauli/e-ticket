@@ -1,34 +1,39 @@
-from django.shortcuts import render
-from rest_framework import response, viewsets
-from rest_framework.decorators import action
-from rest_framework.exceptions import ParseError
-
-# Create your views here.
 from cadastros.serializers import *
+from cadastros.models import *
+from rest_framework import viewsets
 
-class ClientesViewSet(viewsets.ViewSet):
+
+class ClientesViewSet(viewsets.ModelViewSet):
     """
     Viewset para modelo de Clientes
     """
+
     queryset = Clientes.objects.all()
     serializer_class = ClientesSerializer
 
+
 # --------------------------------------------------
 
-class CategoriaViewSet(viewsets.ViewSet):
+
+class CategoriaViewSet(viewsets.ModelViewSet):
     """
     Viewset para modelo de Categoria
     """
+
     queryset = Categoria.objects.all()
     serializer_class = CategoriaSerializer
 
+
 # --------------------------------------------------
 
-class StatusViewSet(viewsets.ViewSet):
+
+class StatusViewSet(viewsets.ModelViewSet):
     """
     Viewset para modelo de Status
     """
+
     queryset = Status.objects.all()
     serializer_class = StatusSerializer
+
 
 # --------------------------------------------------

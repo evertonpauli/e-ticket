@@ -2,6 +2,7 @@ from rest_framework import serializers
 
 from .models import *
 
+
 class ClientesSerializer(serializers.ModelSerializer):
     """
     Serializer para o modelo Clientes
@@ -9,9 +10,11 @@ class ClientesSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Clientes
-        fields = '__all__'
+        fields = "__all__"
+
 
 # -----------------------------------------------------------------------------
+
 
 class CategoriaSerializer(serializers.ModelSerializer):
     """
@@ -20,9 +23,11 @@ class CategoriaSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Categoria
-        fields = '__all__'
+        fields = "__all__"
+
 
 # -----------------------------------------------------------------------------
+
 
 class StatusSerializer(serializers.ModelSerializer):
     """
@@ -31,6 +36,7 @@ class StatusSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Status
-        fields = '__all__'
+        fields = "__all__"
+
 
 # -----------------------------------------------------------------------------

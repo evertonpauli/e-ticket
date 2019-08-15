@@ -10,42 +10,145 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('cadastros', '0001_initial'),
+        ("cadastros", "0001_initial"),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='BaseConhecimento',
+            name="BaseConhecimento",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('descricao', models.CharField(max_length=80, verbose_name='Descrição')),
-                ('nivel', models.CharField(blank=True, choices=[('Basico', 'Basico'), ('Intermediario', 'Intermediario'), ('Avancado', 'Avancado')], max_length=15, null=True, verbose_name='Nivel do User')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "descricao",
+                    models.CharField(max_length=80, verbose_name="Descrição"),
+                ),
+                (
+                    "nivel",
+                    models.CharField(
+                        blank=True,
+                        choices=[
+                            ("Basico", "Basico"),
+                            ("Intermediario", "Intermediario"),
+                            ("Avancado", "Avancado"),
+                        ],
+                        max_length=15,
+                        null=True,
+                        verbose_name="Nivel do User",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Base de Conhecimento',
-                'verbose_name_plural': 'Bases de Conhecimentos',
+                "verbose_name": "Base de Conhecimento",
+                "verbose_name_plural": "Bases de Conhecimentos",
             },
         ),
         migrations.CreateModel(
-            name='Chamado',
+            name="Chamado",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('data_chamado', models.DateField(auto_now=True)),
-                ('contato', models.CharField(help_text='Contato', max_length=25)),
-                ('descricao', models.CharField(max_length=300, verbose_name='Descrição da Solicitação')),
-                ('prioridade', models.CharField(choices=[('Baixa', 'Baixa'), ('Média', 'Média'), ('Alta', 'Alta')], max_length=15, verbose_name='Prioridade')),
-                ('situacao', models.CharField(choices=[('Aberto', 'Aberto'), ('Aguardando Suporte', 'Aguardando Suporte'), ('Aguardando Desenvolvimento', 'Aguardando Desenvolvimento'), ('Concluido', 'Concluido')], max_length=15, verbose_name='Situação')),
-                ('data_conclusao', models.DateField(blank=True, help_text='Preencha quando entregar alguma solicitação que ficou pendente.', null=True)),
-                ('obs_fechamento', models.TextField(blank=True, help_text='Conclusão do atendimento. Máx.: 300 digitos', max_length=300, null=True)),
-                ('atendente', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to=settings.AUTH_USER_MODEL, verbose_name='Usuario')),
-                ('categoria', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='cadastros.Categoria', verbose_name='Categoria')),
-                ('parceiro', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='cadastros.Clientes', verbose_name='Nome do Parceiro')),
-                ('status', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='cadastros.Status', verbose_name='Status')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("data_chamado", models.DateField(auto_now=True)),
+                ("contato", models.CharField(help_text="Contato", max_length=25)),
+                (
+                    "descricao",
+                    models.CharField(
+                        max_length=300, verbose_name="Descrição da Solicitação"
+                    ),
+                ),
+                (
+                    "prioridade",
+                    models.CharField(
+                        choices=[
+                            ("Baixa", "Baixa"),
+                            ("Média", "Média"),
+                            ("Alta", "Alta"),
+                        ],
+                        max_length=15,
+                        verbose_name="Prioridade",
+                    ),
+                ),
+                (
+                    "situacao",
+                    models.CharField(
+                        choices=[
+                            ("Aberto", "Aberto"),
+                            ("Aguardando Suporte", "Aguardando Suporte"),
+                            (
+                                "Aguardando Desenvolvimento",
+                                "Aguardando Desenvolvimento",
+                            ),
+                            ("Concluido", "Concluido"),
+                        ],
+                        max_length=15,
+                        verbose_name="Situação",
+                    ),
+                ),
+                (
+                    "data_conclusao",
+                    models.DateField(
+                        blank=True,
+                        help_text="Preencha quando entregar alguma solicitação que ficou pendente.",
+                        null=True,
+                    ),
+                ),
+                (
+                    "obs_fechamento",
+                    models.TextField(
+                        blank=True,
+                        help_text="Conclusão do atendimento. Máx.: 300 digitos",
+                        max_length=300,
+                        null=True,
+                    ),
+                ),
+                (
+                    "atendente",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.DO_NOTHING,
+                        to=settings.AUTH_USER_MODEL,
+                        verbose_name="Usuario",
+                    ),
+                ),
+                (
+                    "categoria",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.DO_NOTHING,
+                        to="cadastros.Categoria",
+                        verbose_name="Categoria",
+                    ),
+                ),
+                (
+                    "parceiro",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.DO_NOTHING,
+                        to="cadastros.Clientes",
+                        verbose_name="Nome do Parceiro",
+                    ),
+                ),
+                (
+                    "status",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.DO_NOTHING,
+                        to="cadastros.Status",
+                        verbose_name="Status",
+                    ),
+                ),
             ],
-            options={
-                'verbose_name': 'Chamado',
-                'verbose_name_plural': 'Chamados',
-            },
+            options={"verbose_name": "Chamado", "verbose_name_plural": "Chamados"},
         ),
     ]
